@@ -480,4 +480,16 @@ client.on("interactionCreate", async (interaction) => {
 
 });
 
+const express = require("express");
+const app = express();
+
+app.get("/", (req, res) => {
+  res.send("Bot is online!");
+});
+
+const PORT = process.env.PORT || 10000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
 client.login(process.env.TOKEN);
